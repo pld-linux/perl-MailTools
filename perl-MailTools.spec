@@ -35,7 +35,7 @@ MailTools - zestaw narzêdzi do pracy z poczt± i aplikacjami pocztowymi.
 
 %build
 %{__perl} Makefile.PL \
-	INSTALLDIRS=vendor 
+	INSTALLDIRS=vendor
 %{__make}
 
 %{!?_without_tests:%{__make} test}
