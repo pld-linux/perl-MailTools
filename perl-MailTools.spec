@@ -3,7 +3,7 @@ Summary:	MailTools perl module
 Summary(pl):	Modu³ perla MailTools
 Name:		perl-MailTools
 Version:	1.13
-Release:	3
+Release:	4
 Copyright:	GPL
 Group:		Development/Languages/Perl
 Group(pl):	Programowanie/Jêzyki/Perl
@@ -59,7 +59,7 @@ rm -rf $RPM_BUILD_ROOT
 %{perl_sitelib}/Mail/Mailer
 %{perl_sitelib}/auto/Mail/Internet
 %{perl_sitelib}/auto/Mail/Util
-%{perl_sitearch}/auto/Mail
+%{perl_sitearch}/auto/Mail/.packlist
 
 %{_mandir}/man3/*
 
