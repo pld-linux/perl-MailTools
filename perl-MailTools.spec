@@ -8,7 +8,7 @@ Summary:	MailTools - a set of perl modules related to mail applications
 Summary(pl):	MailTools - zestaw narzêdzi do pracy z poczt± i aplikacjami pocztowymi
 Name:		perl-MailTools
 Version:	1.58
-Release:	1
+Release:	2
 License:	GPL
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}%{pnam}-%{version}.tar.gz
@@ -19,7 +19,7 @@ BuildRequires:	perl(Net::Domain) >= 1.05
 BuildRequires:	perl(Net::SMTP) >= 1.03
 BuildRequires:	perl-TimeDate
 %endif
-BuildRequires:	rpm-perlprov >= 3.0.3-16
+BuildRequires:	rpm-perlprov >= 4.1-13
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -33,7 +33,8 @@ MailTools - zestaw narzêdzi do pracy z poczt± i aplikacjami pocztowymi.
 %setup -q -n %{pdir}%{pnam}-%{version}
 
 %build
-%{__perl} Makefile.PL
+%{__perl} Makefile.PL \
+	INSTALLDIRS=vendor 
 %{__make}
 
 %{!?_without_tests:%{__make} test}
@@ -53,9 +54,9 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc Change* README
-%{perl_sitelib}/Mail/*.pm
-%{perl_sitelib}/Mail/Field
-%{perl_sitelib}/Mail/Mailer
-%{perl_sitelib}/auto/Mail/*
+%{perl_vendorlib}/Mail/*.pm
+%{perl_vendorlib}/Mail/Field
+%{perl_vendorlib}/Mail/Mailer
+%{perl_vendorlib}/auto/Mail/*
 %{_mandir}/man3/*
 %{_examplesdir}/%{name}-%{version}
