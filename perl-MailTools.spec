@@ -10,7 +10,8 @@ Summary(pl):	MailTools - zestaw modu³ów perlowych do pracy z poczt± i aplikacjam
 Name:		perl-MailTools
 Version:	1.62
 Release:	1
-License:	GPL
+# same as perl
+License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}%{pnam}-%{version}.tar.gz
 # Source0-md5:	cc1f222e7a53518fb214ecdea05e5b4d
