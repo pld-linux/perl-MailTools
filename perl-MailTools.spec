@@ -1,4 +1,4 @@
-%define		perl_sitelib	%(eval "`perl -V:installsitelib`"; echo $installsitelib)
+%include	/usr/lib/rpm/macros.perl
 Summary:	MailTools perl module
 Summary(pl):	Modu³ perla MailTools
 Name:		perl-MailTools
@@ -8,7 +8,10 @@ Copyright:	GPL
 Group:		Development/Languages/Perl
 Group(pl):	Programowanie/Jêzyki/Perl
 Source:		ftp://ftp.perl.org/pub/CPAN/modules/by-module/Mail/MailTools-%{version}.tar.gz
-BuildRequires:	perl >= 5.005_03-10
+BuildRequires:	rpm-perlprov
+BuildRequires:	perl >= 5.005_03-12
+BuildRequires:	perl-libnet
+BuildRequires:	perl-TimeDate
 %requires_eq	perl
 Requires:	%{perl_sitearch}
 BuildRoot:	/tmp/%{name}-%{version}-root
@@ -17,7 +20,7 @@ BuildRoot:	/tmp/%{name}-%{version}-root
 MailTools - a set of perl modules related to mail applications.
 
 %description -l pl
-MailTools - zestaw modu³ów 
+MailTools - zestaw narzêdzi do pracy z poczt± i aplikacjami pocztowymi.
 
 %prep
 %setup -q -n MailTools-%{version}
