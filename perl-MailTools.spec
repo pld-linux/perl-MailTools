@@ -4,8 +4,8 @@
 %include	/usr/lib/rpm/macros.perl
 %define		pdir	Mail
 %define		pnam	Tools
-Summary:	MailTools - a set of perl modules related to mail applications
-Summary(pl):	MailTools - zestaw narzêdzi do pracy z poczt± i aplikacjami pocztowymi
+Summary:	MailTools - a set of Perl modules related to mail applications
+Summary(pl):	MailTools - zestaw modu³ów perlowych do pracy z poczt± i aplikacjami pocztowymi
 Name:		perl-MailTools
 Version:	1.62
 Release:	1
