@@ -33,7 +33,7 @@ MailTools - zestaw narzêdzi do pracy z poczt± i aplikacjami pocztowymi.
 %setup -q -n %{pdir}%{pnam}-%{version}
 
 %build
-perl Makefile.PL
+%{__perl} Makefile.PL
 %{__make}
 
 %{!?_without_tests:%{__make} test}
