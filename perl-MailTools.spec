@@ -3,7 +3,7 @@ Summary:	MailTools perl module
 Summary(pl):	Modu³ perla MailTools
 Name:		perl-MailTools
 Version:	1.41
-Release:	2
+Release:	3
 License:	GPL
 Group:		Development/Languages/Perl
 Source0:	ftp://ftp.perl.org/pub/CPAN/modules/by-module/Mail/MailTools-%{version}.tar.gz
