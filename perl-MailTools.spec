@@ -1,6 +1,6 @@
 #
 # Conditional build:
-# _without_tests - do not perform "make test"
+%bcond_without	tests	# do not perform "make test"
 %include	/usr/lib/rpm/macros.perl
 %define		pdir	Mail
 %define		pnam	Tools
@@ -14,7 +14,7 @@ Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}%{pnam}-%{version}.tar.gz
 # Source0-md5:	cc1f222e7a53518fb214ecdea05e5b4d
 BuildRequires:	perl-devel >= 5.6
-%if %{?_without_tests:0}%{!?_without_tests:1}
+%if %{with tests}
 BuildRequires:	perl-libnet
 BuildRequires:	perl(Net::Domain) >= 1.05
 BuildRequires:	perl(Net::SMTP) >= 1.03
@@ -38,7 +38,7 @@ MailTools - zestaw narzêdzi do pracy z poczt± i aplikacjami pocztowymi.
 	INSTALLDIRS=vendor
 %{__make}
 
-%{!?_without_tests:%{__make} test}
+%{?_with_tests:%{__make} test}
 
 %install
 rm -rf $RPM_BUILD_ROOT
