@@ -1,0 +1,2 @@
+- added '%%include /usr/lib/rpm/macros.perl'
+- BuildRequires: rpm-perlprov, perl >= 5.005_03-12
