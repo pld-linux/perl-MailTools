@@ -1,3 +1,6 @@
+#
+# Conditional build:
+# _without_tests - do not perform "make test"
 %include	/usr/lib/rpm/macros.perl
 %define		pdir	Mail
 %define		pnam	Tools
@@ -20,7 +23,7 @@ Summary(uk):	Модуль для Perl MailTools
 Summary(zh_CN):	MailTools Perl дё©И
 Name:		perl-MailTools
 Version:	1.41
-Release:	6
+Release:	7
 License:	GPL
 Group:		Development/Languages/Perl
 Source0:	ftp://ftp.cpan.org/pub/CPAN/modules/by-module/{pdir}/%{pdir}%{pnam}-%{version}.tar.gz
@@ -47,6 +50,8 @@ pocztowymi.
 perl Makefile.PL
 %{__make}
 
+%{!?_without_tests:%{__make} test}
+
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
@@ -66,6 +71,6 @@ rm -rf $RPM_BUILD_ROOT
 %{perl_sitelib}/Mail/*.pm
 %{perl_sitelib}/Mail/Field
 %{perl_sitelib}/Mail/Mailer
-%{perl_sitelib}/auto/Mail
+%{perl_sitelib}/auto/Mail/*
 %{_mandir}/man3/*
 %{_examplesdir}/%{name}-%{version}
