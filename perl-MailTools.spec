@@ -20,14 +20,16 @@ Summary(uk):	Модуль для Perl MailTools
 Summary(zh_CN):	MailTools Perl дё©И
 Name:		perl-MailTools
 Version:	1.41
-Release:	5
+Release:	6
 License:	GPL
 Group:		Development/Languages/Perl
 Source0:	ftp://ftp.cpan.org/pub/CPAN/modules/by-module/{pdir}/%{pdir}%{pnam}-%{version}.tar.gz
-BuildRequires:	rpm-perlprov >= 3.0.3-16
 BuildRequires:	perl >= 5.6
 BuildRequires:	perl-libnet
+BuildRequires:	perl(Net::Domain) >= 1.05
+BuildRequires:	perl(Net::SMTP) >= 1.03
 BuildRequires:	perl-TimeDate
+BuildRequires:	rpm-perlprov >= 3.0.3-16
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -64,10 +66,6 @@ rm -rf $RPM_BUILD_ROOT
 %{perl_sitelib}/Mail/*.pm
 %{perl_sitelib}/Mail/Field
 %{perl_sitelib}/Mail/Mailer
-%dir %{perl_sitelib}/auto/Mail/
-%dir %{perl_sitelib}/auto/Mail/Internet
-%{perl_sitelib}/auto/Mail/Internet/*.al
-%dir %{perl_sitelib}/auto/Mail/Util
-%{perl_sitelib}/auto/Mail/Util/*.al
+%{perl_sitelib}/auto/Mail
 %{_mandir}/man3/*
 %{_examplesdir}/%{name}-%{version}
