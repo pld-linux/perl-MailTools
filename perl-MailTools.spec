@@ -3,8 +3,8 @@
 %bcond_without	tests	# do not perform "make test"
 #
 %include	/usr/lib/rpm/macros.perl
-%define		pdir	Mail
-%define		pnam	Tools
+%define	pdir	Mail
+%define	pnam	Tools
 Summary:	MailTools - a set of Perl modules related to mail applications
 Summary(pl):	MailTools - zestaw modu³ów perlowych do pracy z poczt± i aplikacjami pocztowymi
 Name:		perl-MailTools
