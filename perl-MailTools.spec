@@ -2,8 +2,8 @@
 Summary:	MailTools perl module
 Summary(pl):	Modu³ perla MailTools
 Name:		perl-MailTools
-Version:	1.13
-Release:	5
+Version:	1.15
+Release:	1
 License:	GPL
 Group:		Development/Languages/Perl
 Group(de):	Entwicklung/Sprachen/Perl
