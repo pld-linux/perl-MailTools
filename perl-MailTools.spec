@@ -1,6 +1,7 @@
 #
 # Conditional build:
 %bcond_without	tests	# do not perform "make test"
+#
 %include	/usr/lib/rpm/macros.perl
 %define		pdir	Mail
 %define		pnam	Tools
@@ -38,7 +39,7 @@ MailTools - zestaw narzêdzi do pracy z poczt± i aplikacjami pocztowymi.
 	INSTALLDIRS=vendor
 %{__make}
 
-%{?_with_tests:%{__make} test}
+%{?with_tests:%{__make} test}
 
 %install
 rm -rf $RPM_BUILD_ROOT
