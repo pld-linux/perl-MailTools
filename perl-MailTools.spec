@@ -17,10 +17,10 @@ Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}%{pnam}-%{version}
 # Source0-md5:	7871c38e42792c5e0920b3817e1523fd
 BuildRequires:	perl-devel >= 1:5.8.0
 %if %{with tests}
-BuildRequires:	perl-libnet
 BuildRequires:	perl(Net::Domain) >= 1.05
 BuildRequires:	perl(Net::SMTP) >= 1.03
 BuildRequires:	perl-TimeDate
+BuildRequires:	perl-libnet
 %endif
 BuildRequires:	rpm-perlprov >= 4.1-13
 BuildArch:	noarch
@@ -30,7 +30,8 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 MailTools - a set of perl modules related to mail applications.
 
 %description -l pl
-MailTools - zestaw narzêdzi do pracy z poczt± i aplikacjami pocztowymi.
+MailTools - zestaw narzêdzi do pracy z poczt± i aplikacjami
+pocztowymi.
 
 %prep
 %setup -q -n %{pdir}%{pnam}-%{version}
