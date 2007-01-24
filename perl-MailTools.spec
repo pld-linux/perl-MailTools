@@ -13,8 +13,9 @@ Release:	1
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
-Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}%{pnam}-%{version}.tar.gz
+Source0:	http://www.cpan.org/modules/by-module/Mail/%{pdir}%{pnam}-%{version}.tar.gz
 # Source0-md5:	aba82a7eb87906278d98174e10d838be
+URL:		http://search.cpan.org/dist/MailTools/
 BuildRequires:	perl-devel >= 1:5.8.0
 %if %{with tests}
 BuildRequires:	perl(Net::Domain) >= 1.05
@@ -46,7 +47,7 @@ pocztowymi.
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%{__make} install \
+%{__make} pure_install \
 	DESTDIR=$RPM_BUILD_ROOT
 
 install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
