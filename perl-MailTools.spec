@@ -6,7 +6,7 @@
 %define		pdir	Mail
 %define		pnam	Tools
 Summary:	MailTools - a set of Perl modules related to mail applications
-Summary(pl):	MailTools - zestaw modu³ów perlowych do pracy z poczt± i aplikacjami pocztowymi
+Summary(pl.UTF-8):   MailTools - zestaw moduÅ‚Ã³w perlowych do pracy z pocztÄ… i aplikacjami pocztowymi
 Name:		perl-MailTools
 Version:	1.74
 Release:	1
@@ -30,8 +30,8 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 MailTools - a set of perl modules related to mail applications.
 
-%description -l pl
-MailTools - zestaw narzêdzi do pracy z poczt± i aplikacjami
+%description -l pl.UTF-8
+MailTools - zestaw narzÄ™dzi do pracy z pocztÄ… i aplikacjami
 pocztowymi.
 
 %prep
