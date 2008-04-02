@@ -8,13 +8,13 @@
 Summary:	MailTools - a set of Perl modules related to mail applications
 Summary(pl.UTF-8):	MailTools - zestaw modułów perlowych do pracy z pocztą i aplikacjami pocztowymi
 Name:		perl-MailTools
-Version:	1.77
+Version:	2.02
 Release:	1
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/Mail/%{pdir}%{pnam}-%{version}.tar.gz
-# Source0-md5:	c1bcd6627cb9bab271b77a8323d62c48
+# Source0-md5:	824bdbe6c4084739ac2d005eebb09b0e
 URL:		http://search.cpan.org/dist/MailTools/
 BuildRequires:	perl-devel >= 1:5.8.0
 %if %{with tests}
@@ -63,6 +63,5 @@ rm -rf $RPM_BUILD_ROOT
 %{perl_vendorlib}/Mail/*.pm
 %{perl_vendorlib}/Mail/Field
 %{perl_vendorlib}/Mail/Mailer
-%{perl_vendorlib}/auto/Mail/*
 %{_mandir}/man3/*
 %{_examplesdir}/%{name}-%{version}
