@@ -16,7 +16,7 @@ Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/Mail/%{pdir}%{pnam}-%{version}.tar.gz
 # Source0-md5:	0245bf7985c6661e0cf31a59657a18f0
 URL:		http://search.cpan.org/dist/MailTools/
-BuildRequires:	perl-devel >= 1:5.8.0
+BuildRequires:	perl-devel >= 1:5.8.1
 %if %{with tests}
 BuildRequires:	perl(Net::Domain) >= 1.05
 BuildRequires:	perl(Net::SMTP) >= 1.03
@@ -50,6 +50,8 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} pure_install \
 	DESTDIR=$RPM_BUILD_ROOT
 
+%{__rm} $RPM_BUILD_ROOT%{perl_vendorlib}/Mail/*.pod
+
 install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 cp -a README.* examples/* $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 gzip -9nf $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}/README.*
@@ -59,9 +61,17 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc Change* README
-%{perl_vendorlib}/Mail/*.pm
+%doc ChangeLog README
+%{perl_vendorlib}/Mail/Address.pm
+%{perl_vendorlib}/Mail/Cap.pm
+%{perl_vendorlib}/Mail/Field.pm
+%{perl_vendorlib}/Mail/Filter.pm
+%{perl_vendorlib}/Mail/Header.pm
+%{perl_vendorlib}/Mail/Internet.pm
+%{perl_vendorlib}/Mail/Mailer.pm
+%{perl_vendorlib}/Mail/Send.pm
+%{perl_vendorlib}/Mail/Util.pm
 %{perl_vendorlib}/Mail/Field
 %{perl_vendorlib}/Mail/Mailer
-%{_mandir}/man3/*
+%{_mandir}/man3/Mail::*.3pm*
 %{_examplesdir}/%{name}-%{version}
